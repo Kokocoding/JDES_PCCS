@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">JDES_PCCS</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="VoiceBtn">音頻控制</string>
+    <string name="MatrixBtn">矩陣器控制</string>
+    <string name="RelayBtn">繼電器控制</string>
+    <string name="MediaBtn">影像切換</string>
+</resources>

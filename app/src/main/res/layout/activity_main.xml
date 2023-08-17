@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_backgroud"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/titleLogo"
+        android:layout_width="180dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/logo_white" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:layout_width="match_parent"
+        android:layout_height="450dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnVoice"
+                android:layout_width="280dp"
+                android:layout_height="125dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_title_style"
+                android:drawableTop="@drawable/voice60w"
+                android:padding="10dp"
+                android:text="@string/VoiceBtn"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/btnMatrix"
+                android:layout_width="280dp"
+                android:layout_height="125dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_title_style"
+                android:drawableTop="@drawable/array60w"
+                android:padding="10dp"
+                android:text="@string/MatrixBtn"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/btnMedia"
+                android:layout_width="280dp"
+                android:layout_height="125dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_title_style"
+                android:drawableTop="@drawable/switch60w"
+                android:padding="10dp"
+                android:text="@string/MediaBtn"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/btnRelay"
+                android:layout_width="280dp"
+                android:layout_height="125dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_title_style"
+                android:drawableTop="@drawable/relay60w"
+                android:padding="10dp"
+                android:text="@string/RelayBtn"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:gravity="center" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
