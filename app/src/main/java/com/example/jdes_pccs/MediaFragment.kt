@@ -11,7 +11,7 @@ import java.net.Socket
 
 class MediaFragment: Fragment(R.layout.fragment_media) {
 
-    private val buttonIds = arrayOf(R.id.button, R.id.button2, R.id.button3, R.id.button4)
+    private lateinit var buttonIds: Array<Int>
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -21,15 +21,17 @@ class MediaFragment: Fragment(R.layout.fragment_media) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        buttonIds = Array(4) { index -> resources.getIdentifier("button${index + 1}", "id", requireContext().packageName) }
+
         for ((index, buttonId) in buttonIds.withIndex()) {
             val button = view.findViewById<Button>(buttonId)
             button.setOnClickListener {
                 //data組合
-                val byte2 = index+1 // 将标签转换为您需要的数据类型
-                val byte3 = byte2.toByte() + 0x09.toByte()
-                val byte4 = 0x09.toByte() + (byte2*2).toByte()
-                val data = byteArrayOf(0x7A, byte2.toByte(), byte3.toByte(), byte4.toByte(), 0xFF.toByte())
-                val cmd = byteArrayOf(0xFA.toByte(),0x00,0x00,0x01,0x00,0x03,data.count().toByte(),0xFD.toByte()) + data
+                val byte2 = (index + 1).toByte()
+                val byte3 = (0x09 + byte2).toByte()
+                val byte4 = (0x09 + (byte2*2)).toByte()
+                val data = byteArrayOf(0x7A, byte2, byte3, byte4, 0xFF.toByte())
+                val cmd = byteArrayOf(0xFA.toByte(), 0x00, 0x00, 0x01, 0x00, 0x03,data.count().toByte(), 0xFD.toByte()) + data
                 SocketManager.sendCommand(cmd)
             }
         }
