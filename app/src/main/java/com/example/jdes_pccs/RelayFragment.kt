@@ -1,5 +1,6 @@
 package com.example.jdes_pccs
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,20 +19,23 @@ class RelayFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_relay, container, false)
     }
 
+    @SuppressLint("DiscouragedApi")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         //ViewModel 記憶
         vm = ViewModelProvider(requireActivity())[ValViewModel::class.java]
         buttonIds = Array(17) { index -> resources.getIdentifier("button${index + 1}", "id", requireContext().packageName) }
 
         //記憶那些電源是開的
-        for ((index, btnm) in vm.btnBool.withIndex()) {
-            if (btnm){
+        for ((index, btmB) in vm.btnBool.withIndex()) {
+            if (btmB){
                 val button = view.findViewById<Button>(buttonIds[index])
                 button.setBackgroundResource(R.drawable.button_context_select_style)
             }
         }
 
+        //button Listener
         for ((index, buttonId) in buttonIds.withIndex()) {
             val button = view.findViewById<Button>(buttonId)
             button.setOnClickListener {

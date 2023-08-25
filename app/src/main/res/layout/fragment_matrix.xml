@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -17,7 +19,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button13"
+                android:id="@+id/button1"
                 android:layout_width="280dp"
                 android:layout_height="80dp"
                 android:layout_margin="5dp"
@@ -26,10 +28,10 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="講台" />
+                android:text="@string/Table" />
 
             <Button
-                android:id="@+id/button14"
+                android:id="@+id/button2"
                 android:layout_width="280dp"
                 android:layout_height="80dp"
                 android:layout_margin="5dp"
@@ -38,10 +40,10 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="DVD" />
+                android:text="@string/DVD" />
 
             <Button
-                android:id="@+id/button16"
+                android:id="@+id/button3"
                 android:layout_width="280dp"
                 android:layout_height="80dp"
                 android:layout_margin="5dp"
@@ -50,10 +52,10 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="投影機" />
+                android:text="@string/Projector" />
 
             <Button
-                android:id="@+id/button17"
+                android:id="@+id/button4"
                 android:layout_width="280dp"
                 android:layout_height="80dp"
                 android:layout_margin="5dp"
@@ -62,7 +64,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="按鈕4" />
+                android:text="@string/button" />
 
         </LinearLayout>
 

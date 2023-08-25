@@ -1,12 +1,9 @@
 package com.example.jdes_pccs
 
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import java.io.DataOutputStream
-import java.net.Socket
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,10 +20,10 @@ class MainActivity : AppCompatActivity() {
             button.setOnClickListener {
 
                 for (id in buttonIds) {
-                    val button = findViewById<Button>(id)
-                    button.scaleX = 1f
-                    button.scaleY = 1f
-                    button.setBackgroundResource(R.drawable.button_title_style)
+                    val buttonO = findViewById<Button>(id)
+                    buttonO.scaleX = 1f
+                    buttonO.scaleY = 1f
+                    buttonO.setBackgroundResource(R.drawable.button_title_style)
                 }
 
                 button.scaleX = 1.1f

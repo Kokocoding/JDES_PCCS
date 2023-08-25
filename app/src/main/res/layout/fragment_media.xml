@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,12 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
 
             <Button
                 android:id="@+id/button1"
@@ -26,7 +29,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="講桌電腦" />
+                android:text="@string/TablePC" />
 
             <Button
                 android:id="@+id/button2"
@@ -38,7 +41,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="DVD輸出" />
+                android:text="@string/DVDOutput" />
 
             <Button
                 android:id="@+id/button3"
@@ -50,7 +53,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="投影機" />
+                android:text="@string/Projector" />
 
             <Button
                 android:id="@+id/button4"
@@ -62,7 +65,8 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="輸出4" />
+                android:text="@string/button" />
+
         </LinearLayout>
 
     </LinearLayout>
