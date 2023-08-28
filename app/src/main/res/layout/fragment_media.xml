@@ -26,9 +26,11 @@
                 android:layout_weight="1"
                 android:background="@drawable/button_context_style"
                 android:padding="5dp"
-                android:textSize="20sp"
+                android:text="@string/TablePC"
                 android:textColor="@color/white"
-                android:text="@string/TablePC" />
+                android:textSize="20sp"
+                style="?android:attr/buttonBarButtonStyle"
+                tools:ignore="DuplicateSpeakableTextCheck,TextSizeCheck" />
 
             <Button
                 android:id="@+id/button2"
@@ -38,9 +40,11 @@
                 android:layout_weight="1"
                 android:background="@drawable/button_context_style"
                 android:padding="5dp"
-                android:textSize="20sp"
+                android:text="@string/DVDOutput"
                 android:textColor="@color/white"
-                android:text="@string/DVDOutput" />
+                android:textSize="20sp"
+                style="?android:attr/buttonBarButtonStyle"
+                tools:ignore="DuplicateSpeakableTextCheck,TextSizeCheck" />
 
             <Button
                 android:id="@+id/button3"
@@ -52,7 +56,9 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="@string/Projector" />
+                android:text="@string/Projector"
+                style="?android:attr/buttonBarButtonStyle"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/button4"
@@ -62,9 +68,11 @@
                 android:layout_weight="1"
                 android:background="@drawable/button_context_style"
                 android:padding="5dp"
-                android:textSize="20sp"
+                android:text="@string/button"
                 android:textColor="@color/white"
-                android:text="@string/button" />
+                android:textSize="20sp"
+                style="?android:attr/buttonBarButtonStyle"
+                tools:ignore="DuplicateSpeakableTextCheck,TextSizeCheck" />
 
         </LinearLayout>
 

@@ -20,7 +20,8 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:layout_width="match_parent"
-        android:layout_height="450dp" />
+        android:layout_height="450dp"
+        android:layout_marginTop="20dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,7 +47,9 @@
                 android:text="@string/VoiceBtn"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                android:gravity="center" />
+                android:gravity="center"
+                style="?android:attr/buttonBarButtonStyle"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/btnMatrix"
@@ -60,7 +63,9 @@
                 android:text="@string/MatrixBtn"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                android:gravity="center" />
+                android:gravity="center"
+                style="?android:attr/buttonBarButtonStyle"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/btnMedia"
@@ -74,7 +79,9 @@
                 android:text="@string/MediaBtn"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                android:gravity="center" />
+                android:gravity="center"
+                style="?android:attr/buttonBarButtonStyle"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/btnRelay"
@@ -88,7 +95,9 @@
                 android:text="@string/RelayBtn"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                android:gravity="center"/>
+                android:gravity="center"
+                style="?android:attr/buttonBarButtonStyle"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
         </LinearLayout>
 

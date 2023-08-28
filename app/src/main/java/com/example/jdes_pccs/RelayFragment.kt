@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 
 class RelayFragment : Fragment() {
@@ -69,6 +68,8 @@ class RelayFragment : Fragment() {
 
                     button.setBackgroundResource(if(vm.btnBool[index]) R.drawable.button_context_select_style else R.drawable.button_context_style)
                 }
+
+                view.findViewById<Button>(buttonIds[16]).text = if(vm.btnBool[16]) getString(R.string.AllCallOff) else getString(R.string.AllCall)
 
                 //data組合
                 val byte3 = if(index == 16) 0x20.toByte() else index.toByte()

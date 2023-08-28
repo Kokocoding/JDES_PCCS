@@ -28,7 +28,9 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="@string/Table" />
+                android:text="@string/Table"
+                style="?android:attr/buttonBarButtonStyle"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/button2"
@@ -40,7 +42,9 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="@string/DVD" />
+                android:text="@string/DVD"
+                style="?android:attr/buttonBarButtonStyle"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/button3"
@@ -52,7 +56,9 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="@string/Projector" />
+                android:text="@string/Projector"
+                style="?android:attr/buttonBarButtonStyle"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/button4"
@@ -64,7 +70,9 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="@string/button" />
+                android:text="@string/button"
+                style="?android:attr/buttonBarButtonStyle"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
         </LinearLayout>
 

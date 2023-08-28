@@ -25,7 +25,9 @@
                 android:padding="5dp"
                 android:text="靜音"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                style="?android:attr/buttonBarButtonStyle"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/button2"
@@ -37,7 +39,9 @@
                 android:padding="5dp"
                 android:text="混音"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                style="?android:attr/buttonBarButtonStyle"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/button3"
@@ -49,7 +53,9 @@
                 android:padding="5dp"
                 android:text="按鈕3"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                style="?android:attr/buttonBarButtonStyle"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/button4"
@@ -61,7 +67,9 @@
                 android:padding="5dp"
                 android:text="按鈕4"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                style="?android:attr/buttonBarButtonStyle"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
         </LinearLayout>
 

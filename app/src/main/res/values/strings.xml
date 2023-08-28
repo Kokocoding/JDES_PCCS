@@ -14,4 +14,5 @@
     <string name="Table">講桌</string>
     <string name="PowerSup">電源%1$d</string>
     <string name="AllCall">全開</string>
+    <string name="AllCallOff">全關</string>
 </resources>
