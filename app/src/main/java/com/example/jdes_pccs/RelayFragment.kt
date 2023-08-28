@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 
 class RelayFragment : Fragment() {
@@ -22,10 +23,16 @@ class RelayFragment : Fragment() {
     @SuppressLint("DiscouragedApi")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         //ViewModel 記憶
         vm = ViewModelProvider(requireActivity())[ValViewModel::class.java]
         buttonIds = Array(17) { index -> resources.getIdentifier("button${index + 1}", "id", requireContext().packageName) }
+
+        for ((index, buttonId) in buttonIds.withIndex()) {
+            if(index == 16) continue
+            val textView = view.findViewById<Button>(buttonId)
+            val formattedText = getString(R.string.PowerSup, index + 1)
+            textView.text = formattedText
+        }
 
         //記憶那些電源是開的
         for ((index, btmB) in vm.btnBool.withIndex()) {

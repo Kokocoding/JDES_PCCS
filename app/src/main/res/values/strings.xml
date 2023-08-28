@@ -12,4 +12,6 @@
     <string name="DVDOutput">DVD輸出</string>
     <string name="Projector">投影機</string>
     <string name="Table">講桌</string>
+    <string name="PowerSup">電源%1$d</string>
+    <string name="AllCall">全開</string>
 </resources>

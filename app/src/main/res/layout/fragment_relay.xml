@@ -26,7 +26,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="電源1" />
+                android:text="@string/PowerSup" />
 
             <Button
                 android:id="@+id/button2"
@@ -38,7 +38,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="電源2" />
+                android:text="@string/PowerSup" />
 
             <Button
                 android:id="@+id/button3"
@@ -50,7 +50,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="電源3" />
+                android:text="@string/PowerSup" />
 
             <Button
                 android:id="@+id/button4"
@@ -62,7 +62,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="電源4" />
+                android:text="@string/PowerSup" />
 
         </LinearLayout>
 
@@ -81,7 +81,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="電源5" />
+                android:text="@string/PowerSup" />
 
             <Button
                 android:id="@+id/button6"
@@ -93,7 +93,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="電源6" />
+                android:text="@string/PowerSup" />
 
             <Button
                 android:id="@+id/button7"
@@ -105,7 +105,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="電源7" />
+                android:text="@string/PowerSup" />
 
             <Button
                 android:id="@+id/button8"
@@ -117,7 +117,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="電源8" />
+                android:text="@string/PowerSup" />
         </LinearLayout>
 
         <LinearLayout
@@ -135,7 +135,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="電源9" />
+                android:text="@string/PowerSup" />
 
             <Button
                 android:id="@+id/button10"
@@ -147,7 +147,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="電源10" />
+                android:text="@string/PowerSup" />
 
             <Button
                 android:id="@+id/button11"
@@ -159,7 +159,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="電源11" />
+                android:text="@string/PowerSup" />
 
             <Button
                 android:id="@+id/button12"
@@ -171,7 +171,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="電源12" />
+                android:text="@string/PowerSup" />
         </LinearLayout>
 
         <LinearLayout
@@ -189,7 +189,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="電源13" />
+                android:text="@string/PowerSup" />
 
             <Button
                 android:id="@+id/button14"
@@ -201,7 +201,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="電源14" />
+                android:text="@string/PowerSup" />
 
             <Button
                 android:id="@+id/button15"
@@ -213,7 +213,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="電源15" />
+                android:text="@string/PowerSup" />
 
             <Button
                 android:id="@+id/button16"
@@ -225,7 +225,7 @@
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="電源16" />
+                android:text="@string/PowerSup" />
 
         </LinearLayout>
 
@@ -236,15 +236,14 @@
 
             <Button
                 android:id="@+id/button17"
-                android:layout_width="280dp"
+                android:layout_width="500dp"
                 android:layout_height="80dp"
                 android:layout_margin="5dp"
-                android:layout_weight="1"
                 android:background="@drawable/button_context_style"
                 android:padding="5dp"
-                android:textSize="20sp"
+                android:text="@string/AllCall"
                 android:textColor="@color/white"
-                android:text="全開" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 
