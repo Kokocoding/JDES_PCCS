@@ -51,21 +51,21 @@
                 style="?android:attr/buttonBarButtonStyle"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
-            <Button
-                android:id="@+id/btnMatrix"
-                android:layout_width="280dp"
-                android:layout_height="125dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_title_style"
-                android:drawableTop="@drawable/array60w"
-                android:padding="10dp"
-                android:text="@string/MatrixBtn"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:gravity="center"
-                style="?android:attr/buttonBarButtonStyle"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+<!--            <Button-->
+<!--                android:id="@+id/btnMatrix"-->
+<!--                android:layout_width="280dp"-->
+<!--                android:layout_height="125dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/button_title_style"-->
+<!--                android:drawableTop="@drawable/array60w"-->
+<!--                android:padding="10dp"-->
+<!--                android:text="@string/MatrixBtn"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="24sp"-->
+<!--                android:gravity="center"-->
+<!--                style="?android:attr/buttonBarButtonStyle"-->
+<!--                tools:ignore="DuplicateSpeakableTextCheck" />-->
 
             <Button
                 android:id="@+id/btnMedia"

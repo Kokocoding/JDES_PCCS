@@ -11,64 +11,64 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/button1"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="280dp"
                 android:layout_height="80dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_context_style"
                 android:padding="5dp"
                 android:text="靜音"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                style="?android:attr/buttonBarButtonStyle"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/button2"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="280dp"
                 android:layout_height="80dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_context_style"
                 android:padding="5dp"
                 android:text="混音"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                style="?android:attr/buttonBarButtonStyle"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/button3"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="280dp"
                 android:layout_height="80dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_context_style"
                 android:padding="5dp"
                 android:text="按鈕3"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                style="?android:attr/buttonBarButtonStyle"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/button4"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="280dp"
                 android:layout_height="80dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_context_style"
                 android:padding="5dp"
                 android:text="按鈕4"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                style="?android:attr/buttonBarButtonStyle"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
         </LinearLayout>
@@ -85,25 +85,31 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/btnVoiceUpI"
-                    android:layout_width="130dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
-                    android:background="@null"
-                    android:cropToPadding="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/arrow_up" />
+                <Button
+                    android:id="@+id/buttonUp1"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="120dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_context_style"
+                    android:padding="5dp"
+                    android:text="@string/UpIcon"
+                    android:textColor="@color/white"
+                    android:textSize="48sp"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
 
-                <ImageButton
-                    android:id="@+id/btnVoiceDownI"
-                    android:layout_width="130dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
-                    android:background="@null"
-                    android:cropToPadding="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/arrow_down" />
+                <Button
+                    android:id="@+id/buttonDown1"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="120dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_context_style"
+                    android:padding="5dp"
+                    android:text="@string/DownIcon"
+                    android:textColor="@color/white"
+                    android:textSize="48sp"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
 
             </LinearLayout>
 
@@ -114,25 +120,31 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/btnVoiceUpO"
-                    android:layout_width="130dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
-                    android:background="@null"
-                    android:cropToPadding="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/arrow_up" />
+                <Button
+                    android:id="@+id/buttonUp2"
+                    android:layout_width="120dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_context_style"
+                    android:padding="5dp"
+                    android:text="@string/UpIcon"
+                    android:textColor="@color/white"
+                    android:textSize="48sp"
+                    style="?android:attr/buttonBarButtonStyle"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
 
-                <ImageButton
-                    android:id="@+id/btnVoiceDownO"
-                    android:layout_width="130dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
-                    android:background="@null"
-                    android:cropToPadding="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/arrow_down" />
+                <Button
+                    android:id="@+id/buttonDown2"
+                    android:layout_width="120dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_context_style"
+                    android:padding="5dp"
+                    android:text="@string/DownIcon"
+                    android:textColor="@color/white"
+                    android:textSize="48sp"
+                    style="?android:attr/buttonBarButtonStyle"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
 
             </LinearLayout>
 

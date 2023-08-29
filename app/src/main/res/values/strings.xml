@@ -15,4 +15,6 @@
     <string name="PowerSup">電源%1$d</string>
     <string name="AllCall">全開</string>
     <string name="AllCallOff">全關</string>
+    <string name="UpIcon">▲</string>
+    <string name="DownIcon">▼</string>
 </resources>
