@@ -21,22 +21,24 @@
             <Button
                 android:id="@+id/button1"
                 style="@style/ContextButton"
-                android:text="靜音" />
+                android:text="@string/Mute" />
 
             <Button
                 android:id="@+id/button2"
                 style="@style/ContextButton"
-                android:text="混音" />
+                android:text="@string/Remix" />
 
             <Button
                 android:id="@+id/button3"
                 style="@style/ContextButton"
-                android:text="按鈕3" />
+                android:text="@string/button"
+                tools:ignore="VisualLintBounds" />
 
             <Button
                 android:id="@+id/button4"
                 style="@style/ContextButton"
-                android:text="按鈕4" />
+                android:text="@string/button"
+                tools:ignore="VisualLintBounds" />
 
         </LinearLayout>
 
