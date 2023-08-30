@@ -21,7 +21,7 @@
         android:id="@+id/fragmentContainerView"
         android:layout_width="match_parent"
         android:layout_height="450dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,75 +37,29 @@
 
             <Button
                 android:id="@+id/btnVoice"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="300dp"
-                android:layout_height="125dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_title_style"
-                android:drawableTop="@drawable/voice60w"
-                android:gravity="center"
-                android:padding="10dp"
+                style="@style/TitleButton"
                 android:text="@string/VoiceBtn"
-                android:textColor="@color/white"
-                android:textSize="24sp"
+                android:drawableTop="@drawable/voice60w"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
-            <!--            <Button-->
-            <!--                android:id="@+id/btnMatrix"-->
-            <!--                android:layout_width="280dp"-->
-            <!--                android:layout_height="125dp"-->
-            <!--                android:layout_margin="10dp"-->
-            <!--                android:layout_weight="1"-->
-            <!--                android:background="@drawable/button_title_style"-->
-            <!--                android:drawableTop="@drawable/array60w"-->
-            <!--                android:padding="10dp"-->
-            <!--                android:text="@string/MatrixBtn"-->
-            <!--                android:textColor="@color/white"-->
-            <!--                android:textSize="24sp"-->
-            <!--                android:gravity="center"-->
-            <!--                style="?android:attr/buttonBarButtonStyle"-->
-            <!--                tools:ignore="DuplicateSpeakableTextCheck" />-->
+<!--        <Button-->
+<!--            android:id="@+id/btnMatrix"-->
+<!--            style="@style/TitleButton"-->
+<!--            android:text="@string/MatrixBtn"-->
+<!--            tools:ignore="DuplicateSpeakableTextCheck" />-->
 
             <Button
                 android:id="@+id/btnMedia"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="300dp"
-                android:layout_height="125dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_title_style"
-                android:drawableTop="@drawable/switch60w"
-                android:gravity="center"
-                android:padding="10dp"
+                style="@style/TitleButton"
                 android:text="@string/MediaBtn"
-                android:textColor="@color/white"
-                android:textSize="24sp"
+                android:drawableTop="@drawable/switch60w"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/btnRelay"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="300dp"
-                android:layout_height="125dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_title_style"
-                android:drawableTop="@drawable/relay60w"
-                android:gravity="center"
-                android:padding="10dp"
+                style="@style/TitleButton"
                 android:text="@string/RelayBtn"
-                android:textColor="@color/white"
-                android:textSize="24sp"
+                android:drawableTop="@drawable/relay60w"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
         </LinearLayout>

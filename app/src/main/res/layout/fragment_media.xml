@@ -20,59 +20,27 @@
 
             <Button
                 android:id="@+id/button1"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="280dp"
-                android:layout_height="80dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_context_style"
-                android:padding="5dp"
+                style="@style/ContextButton"
                 android:text="@string/TablePC"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                tools:ignore="DuplicateSpeakableTextCheck,TextSizeCheck" />
+                tools:ignore="TextSizeCheck,VisualLintBounds" />
 
             <Button
                 android:id="@+id/button2"
-                android:layout_width="280dp"
-                android:layout_height="80dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_context_style"
-                android:padding="5dp"
+                style="@style/ContextButton"
                 android:text="@string/DVDOutput"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                style="?android:attr/buttonBarButtonStyle"
-                tools:ignore="DuplicateSpeakableTextCheck,TextSizeCheck" />
+                tools:ignore="TextSizeCheck,VisualLintBounds" />
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="280dp"
-                android:layout_height="80dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_context_style"
-                android:padding="5dp"
-                android:textSize="20sp"
-                android:textColor="@color/white"
+                style="@style/ContextButton"
                 android:text="@string/Projector"
-                style="?android:attr/buttonBarButtonStyle"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                tools:ignore="TextSizeCheck,VisualLintBounds" />
 
             <Button
                 android:id="@+id/button4"
-                android:layout_width="280dp"
-                android:layout_height="80dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_context_style"
-                android:padding="5dp"
+                style="@style/ContextButton"
                 android:text="@string/button"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                style="?android:attr/buttonBarButtonStyle"
-                tools:ignore="DuplicateSpeakableTextCheck,TextSizeCheck" />
+                tools:ignore="TextSizeCheck,VisualLintBounds" />
 
         </LinearLayout>
 
