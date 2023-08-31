@@ -4,8 +4,8 @@
     <string name="logo">Logo</string>
     <string name="button">Button</string>
     <string name="DVD">DVD</string>
-    <string name="Mute">靜音</string>
-    <string name="Remix">混音</string>
+    <string name="MuteOn">靜音開</string>
+    <string name="MuteOff">靜音關</string>
     <string name="VoiceBtn">音頻控制</string>
     <string name="MatrixBtn">矩陣器控制</string>
     <string name="RelayBtn">繼電器控制</string>

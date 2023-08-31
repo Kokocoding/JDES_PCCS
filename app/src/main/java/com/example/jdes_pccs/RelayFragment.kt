@@ -75,7 +75,7 @@ class RelayFragment : Fragment() {
                 val byte3 = if(index == 16) 0x20.toByte() else index.toByte()
                 val byte4 = if(vm.btnBool[index]) 0x01.toByte() else 0x02.toByte()
                 val data = byteArrayOf(0xAA.toByte(), 0x00, byte3, byte4, 0x55)
-                val cmd = byteArrayOf(0xFA.toByte(), 0x00, 0x00, 0x01, 0x00, 0x03,data.count().toByte(), 0xFD.toByte()) + data
+                val cmd = byteArrayOf(0xFA.toByte(), 0x00, 0x00, 0x03, 0x00, 0x03,data.count().toByte(), 0xFD.toByte()) + data
                 SocketManager.sendCommand(cmd)
             }
         }

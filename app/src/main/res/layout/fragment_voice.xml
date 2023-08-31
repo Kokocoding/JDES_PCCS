@@ -18,41 +18,22 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button1"
-                style="@style/ContextButton"
-                android:text="@string/Mute" />
-
-            <Button
-                android:id="@+id/button2"
-                style="@style/ContextButton"
-                android:text="@string/Remix" />
-
-            <Button
-                android:id="@+id/button3"
-                style="@style/ContextButton"
-                android:text="@string/button"
-                tools:ignore="VisualLintBounds" />
-
-            <Button
-                android:id="@+id/button4"
-                style="@style/ContextButton"
-                android:text="@string/button"
-                tools:ignore="VisualLintBounds" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:gravity="center_vertical"
                 android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    style="@style/InputTextView"
+                    android:text="輸入1" />
+
+                <Button
+                    android:id="@+id/buttonMute1"
+                    style="@style/MuteButton"
+                    android:text="@string/MuteOn" />
 
                 <Button
                     android:id="@+id/buttonUp1"
@@ -75,6 +56,16 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/InputTextView"
+                    android:text="輸入2" />
+
+                <Button
+                    android:id="@+id/buttonMute2"
+                    style="@style/MuteButton"
+                    android:text="@string/MuteOn" />
+
                 <Button
                     android:id="@+id/buttonUp2"
                     style="@style/UpDownButton"
@@ -83,6 +74,99 @@
 
                 <Button
                     android:id="@+id/buttonDown2"
+                    style="@style/UpDownButton"
+                    android:text="@string/DownIcon"
+                    tools:ignore="TextSizeCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    style="@style/InputTextView"
+                    android:text="輸入3" />
+
+                <Button
+                    android:id="@+id/buttonMute3"
+                    style="@style/MuteButton"
+                    android:text="@string/MuteOn" />
+
+                <Button
+                    android:id="@+id/buttonUp3"
+                    style="@style/UpDownButton"
+                    android:text="@string/UpIcon"
+                    tools:ignore="TextSizeCheck" />
+
+                <Button
+                    android:id="@+id/buttonDown3"
+                    style="@style/UpDownButton"
+                    android:text="@string/DownIcon"
+                    tools:ignore="TextSizeCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@style/InputTextView"
+                    android:text="輸入4" />
+
+                <Button
+                    android:id="@+id/buttonMute4"
+                    style="@style/MuteButton"
+                    android:text="@string/MuteOn" />
+
+                <Button
+                    android:id="@+id/buttonUp4"
+                    style="@style/UpDownButton"
+                    android:text="@string/UpIcon"
+                    tools:ignore="TextSizeCheck" />
+
+                <Button
+                    android:id="@+id/buttonDown4"
+                    style="@style/UpDownButton"
+                    android:text="@string/DownIcon"
+                    tools:ignore="TextSizeCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    style="@style/InputTextView"
+                    android:text="輸入5" />
+
+                <Button
+                    android:id="@+id/buttonMute5"
+                    style="@style/MuteButton"
+                    android:text="@string/MuteOn" />
+
+                <Button
+                    android:id="@+id/buttonUp5"
+                    style="@style/UpDownButton"
+                    android:text="@string/UpIcon"
+                    tools:ignore="TextSizeCheck" />
+
+                <Button
+                    android:id="@+id/buttonDown5"
                     style="@style/UpDownButton"
                     android:text="@string/DownIcon"
                     tools:ignore="TextSizeCheck" />

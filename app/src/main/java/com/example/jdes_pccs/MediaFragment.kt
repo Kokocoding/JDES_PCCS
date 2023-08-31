@@ -42,7 +42,7 @@ class MediaFragment: Fragment(R.layout.fragment_media) {
                         val byte3 = (0x09 + byte2).toByte()
                         val byte4 = (0x09 + (byte2*2)).toByte()
                         val data = byteArrayOf(0x7A, byte2, byte3, byte4, 0xFF.toByte())
-                        val cmd = byteArrayOf(0xFA.toByte(), 0x00, 0x00, 0x01, 0x00, 0x03,data.count().toByte(), 0xFD.toByte()) + data
+                        val cmd = byteArrayOf(0xFA.toByte(), 0x00, 0x00, 0x02, 0x00, 0x03,data.count().toByte(), 0xFD.toByte()) + data
                         SocketManager.sendCommand(cmd)
                     }
                 }
