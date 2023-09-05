@@ -19,6 +19,7 @@ class RelayFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_relay, container, false)
     }
 
+    @OptIn(ExperimentalUnsignedTypes::class)
     @SuppressLint("DiscouragedApi")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,7 +35,7 @@ class RelayFragment : Fragment() {
         }
 
         //記憶那些電源是開的
-        for ((index, btmB) in vm.btnBool.withIndex()) {
+        for ((index, btmB) in vm.RelaybtnBool.withIndex()) {
             if (btmB){
                 val button = view.findViewById<Button>(buttonIds[index])
                 button.setBackgroundResource(R.drawable.button_context_select_style)
@@ -45,37 +46,37 @@ class RelayFragment : Fragment() {
         for ((index, buttonId) in buttonIds.withIndex()) {
             val button = view.findViewById<Button>(buttonId)
             button.setOnClickListener {
-                vm.btnBool[index] = !vm.btnBool[index]
+                vm.RelaybtnBool[index] = !vm.RelaybtnBool[index]
 
                 //按鈕UI變更 index=16 全開
                 if(index == 16){
                     for((i, b) in buttonIds.withIndex()){
-                        if(i != 16) vm.btnBool[i] = vm.btnBool[index]
-                        view.findViewById<Button>(b).setBackgroundResource(if(vm.btnBool[index]) R.drawable.button_context_select_style else R.drawable.button_context_style)
+                        if(i != 16) vm.RelaybtnBool[i] = vm.RelaybtnBool[index]
+                        view.findViewById<Button>(b).setBackgroundResource(if(vm.RelaybtnBool[index]) R.drawable.button_context_select_style else R.drawable.button_context_style)
                     }
                 }else{
                     //16區都按了=>全開按鈕亮起
-                    val allButtonsTrue = vm.btnBool.copyOfRange(0, 16).all { it }
+                    val allButtonsTrue = vm.RelaybtnBool.copyOfRange(0, 16).all { it }
                     if(allButtonsTrue){
-                        vm.btnBool[16] = true
+                        vm.RelaybtnBool[16] = true
                         view.findViewById<Button>(buttonIds[16]).setBackgroundResource(R.drawable.button_context_select_style)
                     }
                     //有一顆關閉而且全開打開中=>全開按鈕關閉
-                    if(!vm.btnBool[index] && vm.btnBool[16]){
-                        vm.btnBool[16] = false
+                    if(!vm.RelaybtnBool[index] && vm.RelaybtnBool[16]){
+                        vm.RelaybtnBool[16] = false
                         view.findViewById<Button>(buttonIds[16]).setBackgroundResource(R.drawable.button_context_style)
                     }
 
-                    button.setBackgroundResource(if(vm.btnBool[index]) R.drawable.button_context_select_style else R.drawable.button_context_style)
+                    button.setBackgroundResource(if(vm.RelaybtnBool[index]) R.drawable.button_context_select_style else R.drawable.button_context_style)
                 }
 
-                view.findViewById<Button>(buttonIds[16]).text = if(vm.btnBool[16]) getString(R.string.AllCallOff) else getString(R.string.AllCall)
+                view.findViewById<Button>(buttonIds[16]).text = if(vm.RelaybtnBool[16]) getString(R.string.AllCallOff) else getString(R.string.AllCall)
 
                 //data組合
-                val byte3 = if(index == 16) 0x20.toByte() else index.toByte()
-                val byte4 = if(vm.btnBool[index]) 0x01.toByte() else 0x02.toByte()
-                val data = byteArrayOf(0xAA.toByte(), 0x00, byte3, byte4, 0x55)
-                val cmd = byteArrayOf(0xFA.toByte(), 0x00, 0x00, 0x03, 0x00, 0x03,data.count().toByte(), 0xFD.toByte()) + data
+                val byte3 = if(index == 16) 0x20.toUByte() else index.toUByte()
+                val byte4 = if(vm.RelaybtnBool[index]) 0x01.toUByte() else 0x02.toUByte()
+                val data = ubyteArrayOf(0xAAu, 0x00u, byte3, byte4, 0x55u)
+                val cmd = ubyteArrayOf(0xFAu, 0x00u, 0x00u, 0x04u, 0x00u, 0x03u, data.count().toUByte(), 0xFDu) + data
                 SocketManager.sendCommand(cmd)
             }
         }

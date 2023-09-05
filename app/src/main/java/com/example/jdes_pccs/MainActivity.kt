@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 
 class MainActivity : AppCompatActivity() {
 
-    private val buttonIds = arrayOf(R.id.btnVoice, R.id.btnMedia, R.id.btnRelay)
+    private val buttonIds = arrayOf(R.id.btnVoice, R.id.btnMachine, R.id.btnMedia, R.id.btnRelay)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 button.setBackgroundResource(R.drawable.button_title_click_style)
                 when (buttonId) {
                     R.id.btnVoice -> replaceFragment(VoiceFragment())
-//                    R.id.btnMatrix -> replaceFragment(MatrixFragment())
+                    R.id.btnMachine -> replaceFragment(MachineFragment())
                     R.id.btnRelay -> replaceFragment(RelayFragment())
                     R.id.btnMedia -> replaceFragment(MediaFragment())
                 }

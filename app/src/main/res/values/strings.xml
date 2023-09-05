@@ -7,13 +7,12 @@
     <string name="MuteOn">靜音開</string>
     <string name="MuteOff">靜音關</string>
     <string name="VoiceBtn">音頻控制</string>
-    <string name="MatrixBtn">矩陣器控制</string>
+    <string name="MachineBtn">設備控制</string>
     <string name="RelayBtn">繼電器控制</string>
     <string name="MediaBtn">影像切換</string>
-    <string name="TablePC">講桌電腦</string>
+    <string name="Screen">布幕</string>
     <string name="DVDOutput">DVD輸出</string>
     <string name="Projector">投影機</string>
-    <string name="Table">講桌</string>
     <string name="PowerSup">電源%1$d</string>
     <string name="AllCall">全開</string>
     <string name="AllCallOff">全關</string>

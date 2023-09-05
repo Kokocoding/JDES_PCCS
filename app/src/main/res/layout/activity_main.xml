@@ -42,11 +42,12 @@
                 android:drawableTop="@drawable/voice60w"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
-<!--        <Button-->
-<!--            android:id="@+id/btnMatrix"-->
-<!--            style="@style/TitleButton"-->
-<!--            android:text="@string/MatrixBtn"-->
-<!--            tools:ignore="DuplicateSpeakableTextCheck" />-->
+            <Button
+                android:id="@+id/btnMachine"
+                style="@style/TitleButton"
+                android:text="@string/MachineBtn"
+                android:drawableTop="@drawable/machine60w"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/btnMedia"

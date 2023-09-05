@@ -3,6 +3,7 @@ package com.example.jdes_pccs
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
+import android.util.Base64
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -21,11 +22,8 @@ class VoiceFragment : Fragment() {
     private lateinit var buttonIds: Array<Int>
     private lateinit var upButtonIds: Array<Int>
     private lateinit var downButtonIds: Array<Int>
-
     private var saveObject = JSONObject()
-
     private lateinit var vm: ValViewModel
-
     private val jsonName = "json_file.json"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -33,6 +31,7 @@ class VoiceFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_voice, container, false)
     }
 
+    @OptIn(ExperimentalUnsignedTypes::class)
     @SuppressLint("DiscouragedApi", "ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -59,37 +58,52 @@ class VoiceFragment : Fragment() {
             }
         }
 
+        //音量up
         for ((index, buttonId) in upButtonIds.withIndex()) {
             val button = view.findViewById<Button>(buttonId)
-            button.setOnTouchListener{ view, motionEvent ->
+            button.setOnTouchListener{ upView, motionEvent ->
                 when (motionEvent.action) {
                     MotionEvent.ACTION_DOWN -> {
-                        view.scaleX = 1.1f
-                        view.scaleY = 1.1f
+                        upView.scaleX = 1.1f
+                        upView.scaleY = 1.1f
                     }
                     MotionEvent.ACTION_UP->{
-                        view.scaleX = 1f
-                        view.scaleY = 1f
+                        upView.scaleX = 1f
+                        upView.scaleY = 1f
 
                         //data組合
-                        //val data = byteArrayOf(0xB3.toByte(), 0x21, 0x0D, 0x00, )
-                        val byte3 = (0x03+index).toByte()
-                        val byte9 = (0x00+index).toByte()
-                        val data = byteArrayOf(0xB3.toByte(), 0x21, byte3, 0x00, 0x2B, 0x01, 0x02, 0x00, byte9, 0x00, 0x01, 0x00)
-
-                        val cmd = byteArrayOf(0xFA.toByte(), 0x00, 0x00, 0x01, 0x00, 0x03,data.count().toByte(), 0xFD.toByte()) + data
+                        val data = voiceUpDown(index.toString(), "up")
+                        val cmd = ubyteArrayOf(0xFAu, 0x00u, 0x00u, 0x01u, 0x00u, 0x03u, data.count().toUByte(), 0xFDu) + data
                         SocketManager.sendCommand(cmd)
 
                         //json 處理
-                        val existingNestedObject = saveObject.optJSONObject(index.toString())
-                        if (existingNestedObject != null && existingNestedObject.has("voice")) {
-                            existingNestedObject.put("voice", data)
-                        } else {
-                            val newNestedObject = JSONObject()
-                            newNestedObject.put("voice", data)
-                            saveObject.put(index.toString(), newNestedObject)
-                        }
-                        saveJsonToFile(requireContext().applicationContext, saveObject.toString())
+                        saveJson(index.toString(), "voice", data)
+                    }
+                }
+                true
+            }
+        }
+
+        //音量down
+        for ((index, buttonId) in downButtonIds.withIndex()) {
+            val button = view.findViewById<Button>(buttonId)
+            button.setOnTouchListener{ downView, motionEvent ->
+                when (motionEvent.action) {
+                    MotionEvent.ACTION_DOWN -> {
+                        downView.scaleX = 1.1f
+                        downView.scaleY = 1.1f
+                    }
+                    MotionEvent.ACTION_UP->{
+                        downView.scaleX = 1f
+                        downView.scaleY = 1f
+
+                        //data組合
+                        val data = voiceUpDown(index.toString(), "down")
+                        val cmd = ubyteArrayOf(0xFAu, 0x00u, 0x00u, 0x01u, 0x00u, 0x03u, data.count().toUByte(), 0xFDu) + data
+                        SocketManager.sendCommand(cmd)
+
+                        //json 處理
+                        saveJson(index.toString(), "voice", data)
                     }
                 }
                 true
@@ -107,39 +121,77 @@ class VoiceFragment : Fragment() {
                 button.text = if(vm.MuteBool[index]) getString(R.string.MuteOff) else getString(R.string.MuteOn)
 
                 //data組合
-                val byte3 = (0x03+index).toByte()
-                val byte9 = (0x00+index).toByte()
-                val byte11 = if(vm.MuteBool[index]) 0x01.toByte() else 0x00.toByte()
-                val data = byteArrayOf(0xB3.toByte(), 0x21, byte3, 0x00, 0x2B, 0x01, 0x02, 0x00, byte9, 0x00, byte11, 0x00)
-                val cmd = byteArrayOf(0xFA.toByte(), 0x00, 0x00, 0x01, 0x00, 0x03,data.count().toByte(), 0xFD.toByte()) + data
+                val byte3 = (0x03 + index).toUByte()
+                val byte9 = (0x00 + index).toUByte()
+                val byte11 = if(vm.MuteBool[index]) 0x01.toUByte() else 0x00.toUByte()
+                val data = ubyteArrayOf(0xB3u, 0x21u, byte3, 0x00u, 0x2Bu, 0x01u, 0x02u, 0x00u, byte9, 0x00u, byte11, 0x00u)
+                val cmd = ubyteArrayOf(0xFAu, 0x00u, 0x00u, 0x01u, 0x00u, 0x03u, data.count().toUByte(), 0xFDu) + data
                 SocketManager.sendCommand(cmd)
 
                 //json 處理
-                val existingNestedObject = saveObject.optJSONObject(index.toString())
-                if (existingNestedObject != null && existingNestedObject.has("mute")) {
-                    existingNestedObject.put("mute", vm.MuteBool[index])
-                } else {
-                    val newNestedObject = JSONObject()
-                    newNestedObject.put("mute", vm.MuteBool[index])
-                    saveObject.put(index.toString(), newNestedObject)
-                }
-                saveJsonToFile(requireContext().applicationContext, saveObject.toString())
+                saveJson(index.toString(), "mute", vm.MuteBool[index])
             }
         }
     }
 
-    //讀取json
-    private fun openJsonFile(): JSONObject {
+    @OptIn(ExperimentalUnsignedTypes::class)
+    private fun voiceUpDown(index : String, mode : String) : UByteArray {
 
+        val data: UByteArray = if (saveObject.has(index)) {
+            val nestedObject = saveObject.getJSONObject(index) // 取得json[index]
+            if (nestedObject.has("voice")) {
+                val voiceDataString = nestedObject.getString("voice")
+                base64ToByteArray(voiceDataString)
+            }else{
+                ubyteArrayOf(0xB3u, 0x21u, 0x01u, 0x00u, 0x2Bu, 0x01u, 0x01u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u)
+            }
+        } else {
+            ubyteArrayOf(0xB3u, 0x21u, 0x01u, 0x00u, 0x2Bu, 0x01u, 0x01u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u)
+        }
+
+        data[8] = index.toUByte()
+
+        when(mode){
+            "up" -> {
+                if (data[11].toInt() != 4 || (data[11].toInt() == 4 && data[10].toInt() != 176)) {
+                    if(data[10].toInt() + 10 > 255){
+                        if(data[11].toInt() + 1 > 255){
+                            data[11] = 0x00u
+                        }else{
+                            data[11] = (data[11].toInt() + 1).toUByte()
+                        }
+                    }
+                    data[10] = (data[10] + 10u).toUByte()
+                }
+            }
+            "down" -> {
+                if (data[11].toInt() != 227 || (data[11].toInt() == 227 && data[10].toInt() != 224)) {
+                    if(data[10].toInt() - 10 < 0){
+                        if(data[11].toInt() - 1 < 0){
+                            data[11] = 0xFFu
+                        }else{
+                            data[11] = (data[11].toInt() - 1).toUByte()
+                        }
+                    }
+                    data[10] = (data[10] - 10u).toUByte()
+                }
+            }
+        }
+
+        return data
+    }
+
+    //讀取json
+    private fun openJsonFile() : JSONObject {
         var jsonObject = JSONObject()
 
         try {
             val fileInputStream = requireContext().applicationContext.openFileInput(jsonName)
             val inputStreamReader = InputStreamReader(fileInputStream)
             val bufferedReader = BufferedReader(inputStreamReader)
-
             val stringBuilder = StringBuilder()
             var line: String?
+
             while (bufferedReader.readLine().also { line = it } != null) {
                 stringBuilder.append(line)
             }
@@ -157,6 +209,29 @@ class VoiceFragment : Fragment() {
         return jsonObject
     }
 
+    @OptIn(ExperimentalUnsignedTypes::class)
+    private fun saveJson(index : String, key : String, data : Any){
+        //json 處理
+        val existingNestedObject = saveObject.optJSONObject(index)
+
+        if (existingNestedObject != null) {
+            if (data is Boolean) {
+                existingNestedObject.put(key, data)
+            } else if (data is UByteArray) {
+                existingNestedObject.put(key, byteArrayToBase64(data))
+            }
+        } else {
+            val newNestedObject = JSONObject()
+            if (data is Boolean) {
+                newNestedObject.put(key, data)
+            } else if (data is UByteArray) {
+                newNestedObject.put(key, byteArrayToBase64(data))
+            }
+            saveObject.put(index, newNestedObject)
+        }
+        saveJsonToFile(requireContext().applicationContext, saveObject.toString())
+    }
+
     // 儲存 JSON 到內部儲存空間
     private fun saveJsonToFile(context: Context, jsonString: String) {
         try {
@@ -166,5 +241,17 @@ class VoiceFragment : Fragment() {
         } catch (e: IOException) {
             e.printStackTrace()
         }
+    }
+
+    @OptIn(ExperimentalUnsignedTypes::class)
+    private fun byteArrayToBase64(byteArray: UByteArray): String {
+        val byteArrayAsByteArray = byteArray.asByteArray() // 将 UByteArray 转换为 ByteArray
+        return Base64.encodeToString(byteArrayAsByteArray, Base64.DEFAULT)
+    }
+
+    @OptIn(ExperimentalUnsignedTypes::class)
+    private fun base64ToByteArray(base64String: String): UByteArray {
+        val byteArrayAsByteArray = Base64.decode(base64String, Base64.DEFAULT)
+        return byteArrayAsByteArray.toUByteArray() // 将 ByteArray 转换为 UByteArray
     }
 }

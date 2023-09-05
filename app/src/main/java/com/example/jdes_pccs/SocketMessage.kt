@@ -16,13 +16,14 @@ object SocketManager {
         }.start()
     }
 
-    fun sendCommand(data: ByteArray) {
+    @OptIn(ExperimentalUnsignedTypes::class)
+    fun sendCommand(data: UByteArray) {
         if (::socket.isInitialized && socket.isConnected) {
             Thread {
                 try {
                     val outputStream = socket.getOutputStream()
                     val dataOutputStream = DataOutputStream(outputStream)
-                    dataOutputStream.write(data)
+                    dataOutputStream.write(data.toByteArray())
                     dataOutputStream.flush()
                     outputStream.flush()
                 } catch (e: Exception) {

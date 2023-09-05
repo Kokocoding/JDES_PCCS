@@ -21,19 +21,19 @@
             <Button
                 android:id="@+id/button1"
                 style="@style/ContextButton"
-                android:text="@string/TablePC"
+                android:text="@string/Projector"
                 tools:ignore="TextSizeCheck,VisualLintBounds" />
 
             <Button
                 android:id="@+id/button2"
                 style="@style/ContextButton"
-                android:text="@string/DVDOutput"
+                android:text="@string/button"
                 tools:ignore="TextSizeCheck,VisualLintBounds" />
 
             <Button
                 android:id="@+id/button3"
                 style="@style/ContextButton"
-                android:text="@string/Projector"
+                android:text="@string/button"
                 tools:ignore="TextSizeCheck,VisualLintBounds" />
 
             <Button

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MachineFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/InputTextView"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/button1"
+                    android:text="@string/Projector"
+                    style="@style/ContextButton" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        style="@style/InputTextView"
+                        android:text="@string/Screen" />
+
+                    <Button
+                        android:id="@+id/buttonUp1"
+                        style="@style/ContextButton"
+                        android:textSize="36sp"
+                        android:text="@string/UpIcon"
+                        tools:ignore="DuplicateSpeakableTextCheck,TextSizeCheck" />
+
+                    <Button
+                        android:id="@+id/buttonDown1"
+                        style="@style/ContextButton"
+                        android:textSize="36sp"
+                        android:text="@string/DownIcon"
+                        tools:ignore="DuplicateSpeakableTextCheck,TextSizeCheck" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -18,6 +18,7 @@ class MediaFragment: Fragment(R.layout.fragment_media) {
         return inflater.inflate(R.layout.fragment_media, container, false)
     }
 
+    @OptIn(ExperimentalUnsignedTypes::class)
     @SuppressLint("DiscouragedApi", "ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -38,11 +39,11 @@ class MediaFragment: Fragment(R.layout.fragment_media) {
                         view.scaleY = 1f
 
                         //data組合
-                        val byte2 = (index + 1).toByte()
-                        val byte3 = (0x09 + byte2).toByte()
-                        val byte4 = (0x09 + (byte2*2)).toByte()
-                        val data = byteArrayOf(0x7A, byte2, byte3, byte4, 0xFF.toByte())
-                        val cmd = byteArrayOf(0xFA.toByte(), 0x00, 0x00, 0x02, 0x00, 0x03,data.count().toByte(), 0xFD.toByte()) + data
+                        val byte2 = (index + 1).toUByte()
+                        val byte3 = (0x09u + byte2).toUByte()
+                        val byte4 = (0x09u + (byte2*2u)).toUByte()
+                        val data = ubyteArrayOf(0x7Au, byte2, byte3, byte4, 0xFFu)
+                        val cmd = ubyteArrayOf(0xFAu, 0x00u, 0x00u, 0x03u, 0x00u, 0x03u, data.count().toUByte(), 0xFDu) + data
                         SocketManager.sendCommand(cmd)
                     }
                 }
