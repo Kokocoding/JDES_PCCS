@@ -28,15 +28,15 @@ class MediaFragment: Fragment(R.layout.fragment_media) {
         for ((index, buttonId) in buttonIds.withIndex()) {
             val button = view.findViewById<Button>(buttonId)
 
-            button.setOnTouchListener{ view, motionEvent ->
+            button.setOnTouchListener{ viewMedia, motionEvent ->
                 when (motionEvent.action) {
                     MotionEvent.ACTION_DOWN -> {
-                        view.scaleX = 1.1f
-                        view.scaleY = 1.1f
+                        viewMedia.scaleX = 1.1f
+                        viewMedia.scaleY = 1.1f
                     }
                     MotionEvent.ACTION_UP->{
-                        view.scaleX = 1f
-                        view.scaleY = 1f
+                        viewMedia.scaleX = 1f
+                        viewMedia.scaleY = 1f
 
                         //data組合
                         val byte2 = (index + 1).toUByte()
