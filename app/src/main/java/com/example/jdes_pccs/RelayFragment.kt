@@ -30,8 +30,7 @@ class RelayFragment : Fragment() {
         for ((index, buttonId) in buttonIds.withIndex()) {
             if(index == 16) continue
             val textView = view.findViewById<Button>(buttonId)
-            val formattedText = getString(R.string.PowerSup, index + 1)
-            textView.text = formattedText
+            textView.text = getString(R.string.PowerSup, index + 1)
         }
 
         //記憶那些電源是開的

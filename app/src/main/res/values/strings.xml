@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">JDES_PCCS</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="On">開啟</string>
+    <string name="Off">關閉</string>
     <string name="logo">Logo</string>
     <string name="button">Button</string>
     <string name="DVD">DVD</string>
-    <string name="MuteOn">靜音開</string>
-    <string name="MuteOff">靜音關</string>
+    <string name="Mute">靜音</string>
     <string name="VoiceBtn">音頻控制</string>
     <string name="MachineBtn">設備控制</string>
     <string name="RelayBtn">繼電器控制</string>

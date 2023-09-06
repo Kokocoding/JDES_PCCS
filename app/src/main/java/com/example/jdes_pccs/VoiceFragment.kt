@@ -53,7 +53,6 @@ class VoiceFragment : Fragment() {
                     vm.MuteBool[entryKey.toInt()] = true
                     val button = view.findViewById<Button>(buttonIds[entryKey.toInt()])
                     button.setBackgroundResource(R.drawable.button_context_select_style)
-                    button.text = getString(R.string.MuteOff)
                 }
             }
         }
@@ -118,7 +117,6 @@ class VoiceFragment : Fragment() {
                 vm.MuteBool[index] = !vm.MuteBool[index]
 
                 button.setBackgroundResource(if(vm.MuteBool[index]) R.drawable.button_context_select_style else R.drawable.button_context_style)
-                button.text = if(vm.MuteBool[index]) getString(R.string.MuteOff) else getString(R.string.MuteOn)
 
                 //data組合
                 val byte3 = (0x03 + index).toUByte()
@@ -153,27 +151,27 @@ class VoiceFragment : Fragment() {
 
         when(mode){
             "up" -> {
-                if (data[11].toInt() != 4 || (data[11].toInt() == 4 && data[10].toInt() != 176)) {
-                    if(data[10].toInt() + 10 > 255){
+                if (data[11].toInt() != 4 || (data[11].toInt() == 4 && data[10].toInt() < 176)) {
+                    if(data[10].toInt() + 50 > 255){
                         if(data[11].toInt() + 1 > 255){
                             data[11] = 0x00u
                         }else{
                             data[11] = (data[11].toInt() + 1).toUByte()
                         }
                     }
-                    data[10] = (data[10] + 10u).toUByte()
+                    data[10] = (data[10] + 50u).toUByte()
                 }
             }
             "down" -> {
-                if (data[11].toInt() != 227 || (data[11].toInt() == 227 && data[10].toInt() != 224)) {
-                    if(data[10].toInt() - 10 < 0){
+                if (data[11].toInt() != 227 || (data[11].toInt() == 227 && data[10].toInt() > 224)) {
+                    if(data[10].toInt() - 50 < 0){
                         if(data[11].toInt() - 1 < 0){
                             data[11] = 0xFFu
                         }else{
                             data[11] = (data[11].toInt() - 1).toUByte()
                         }
                     }
-                    data[10] = (data[10] - 10u).toUByte()
+                    data[10] = (data[10] - 50u).toUByte()
                 }
             }
         }
@@ -201,7 +199,6 @@ class VoiceFragment : Fragment() {
 
             // 使用 JSON 解析庫解析 JSON 字串為 JSON 物件
             jsonObject = JSONObject(jsonString)
-
         } catch (e: Exception) {
             e.printStackTrace()
         }

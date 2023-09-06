@@ -33,7 +33,7 @@
                 <Button
                     android:id="@+id/buttonMute1"
                     style="@style/MuteButton"
-                    android:text="@string/MuteOn" />
+                    android:text="@string/Mute" />
 
                 <Button
                     android:id="@+id/buttonUp1"
@@ -64,7 +64,7 @@
                 <Button
                     android:id="@+id/buttonMute2"
                     style="@style/MuteButton"
-                    android:text="@string/MuteOn" />
+                    android:text="@string/Mute" />
 
                 <Button
                     android:id="@+id/buttonUp2"
@@ -95,7 +95,7 @@
                 <Button
                     android:id="@+id/buttonMute3"
                     style="@style/MuteButton"
-                    android:text="@string/MuteOn" />
+                    android:text="@string/Mute" />
 
                 <Button
                     android:id="@+id/buttonUp3"
@@ -126,7 +126,7 @@
                 <Button
                     android:id="@+id/buttonMute4"
                     style="@style/MuteButton"
-                    android:text="@string/MuteOn" />
+                    android:text="@string/Mute" />
 
                 <Button
                     android:id="@+id/buttonUp4"
@@ -157,7 +157,7 @@
                 <Button
                     android:id="@+id/buttonMute5"
                     style="@style/MuteButton"
-                    android:text="@string/MuteOn" />
+                    android:text="@string/Mute" />
 
                 <Button
                     android:id="@+id/buttonUp5"

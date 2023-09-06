@@ -21,55 +21,54 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:gravity="center_vertical"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/textView1"
                     style="@style/InputTextView"
-                    android:text="" />
+                    android:text="@string/Projector" />
 
                 <Button
-                    android:id="@+id/button1"
-                    android:text="@string/Projector"
-                    style="@style/ContextButton" />
+                    android:id="@+id/buttonOn"
+                    style="@style/ContextButton"
+                    android:textSize="24sp"
+                    android:text="@string/On"
+                    tools:ignore="DuplicateSpeakableTextCheck,TextSizeCheck" />
+
+                <Button
+                    android:id="@+id/buttonOff"
+                    style="@style/ContextButton"
+                    android:textSize="24sp"
+                    android:text="@string/Off"
+                    tools:ignore="DuplicateSpeakableTextCheck,TextSizeCheck" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:gravity="center_vertical"
+                android:gravity="center"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/InputTextView"
+                    android:text="@string/Screen" />
 
-                    <TextView
-                        android:id="@+id/textView1"
-                        style="@style/InputTextView"
-                        android:text="@string/Screen" />
+                <Button
+                    android:id="@+id/buttonUp"
+                    style="@style/ContextButton"
+                    android:textSize="36sp"
+                    android:text="@string/UpIcon"
+                    tools:ignore="DuplicateSpeakableTextCheck,TextSizeCheck" />
 
-                    <Button
-                        android:id="@+id/buttonUp1"
-                        style="@style/ContextButton"
-                        android:textSize="36sp"
-                        android:text="@string/UpIcon"
-                        tools:ignore="DuplicateSpeakableTextCheck,TextSizeCheck" />
-
-                    <Button
-                        android:id="@+id/buttonDown1"
-                        style="@style/ContextButton"
-                        android:textSize="36sp"
-                        android:text="@string/DownIcon"
-                        tools:ignore="DuplicateSpeakableTextCheck,TextSizeCheck" />
-
-                </LinearLayout>
+                <Button
+                    android:id="@+id/buttonDown"
+                    style="@style/ContextButton"
+                    android:textSize="36sp"
+                    android:text="@string/DownIcon"
+                    tools:ignore="DuplicateSpeakableTextCheck,TextSizeCheck" />
 
             </LinearLayout>
 
