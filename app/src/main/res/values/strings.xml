@@ -14,9 +14,12 @@
     <string name="Screen">布幕</string>
     <string name="DVDOutput">DVD輸出</string>
     <string name="Projector">投影機</string>
+    <string name="PowerBtn">電源控制</string>
     <string name="PowerSup">電源%1$d</string>
     <string name="AllCall">全開</string>
     <string name="AllCallOff">全關</string>
     <string name="UpIcon">▲</string>
     <string name="DownIcon">▼</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

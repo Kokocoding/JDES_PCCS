@@ -7,4 +7,10 @@
     <color name="aqua2">#6EEEFF</color>
     <color name="green">#00FF00</color>
     <color name="red">#FF0000</color>
+    <color name="progressBG">#80000000</color>
+    <color name="btn_stroke">#33000000</color>
+    <color name="btn_context">#68000000</color>
+    <color name="btn_context_select">#85D4CC88</color>
+    <color name="btn_title">#4FBDBDF3</color>
+    <color name="btn_title_select">#C3BDBDF3</color>
 </resources>

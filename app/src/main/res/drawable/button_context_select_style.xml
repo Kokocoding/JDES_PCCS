@@ -7,9 +7,9 @@
     <gradient
         android:angle="135"
         android:centerX="60%"
-        android:centerColor="#85D4CC88"
-        android:startColor="#85D4CC88"
-        android:endColor="#85D4CC88"
+        android:centerColor="@color/btn_context_select"
+        android:startColor="@color/btn_context_select"
+        android:endColor="@color/btn_context_select"
         android:type="linear"
         />
 
@@ -27,6 +27,6 @@
 
     <stroke
         android:width="3dp"
-        android:color="#33000000"
+        android:color="@color/btn_stroke"
         />
 </shape>

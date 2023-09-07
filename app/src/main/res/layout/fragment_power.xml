@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PowerFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/RelayButton"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/RelayButton" />
+
+            <Button
+                android:id="@+id/button3"
+                style="@style/RelayButton" />
+
+            <Button
+                android:id="@+id/button4"
+                style="@style/RelayButton" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button5"
+                style="@style/RelayButton" />
+
+            <Button
+                android:id="@+id/button6"
+                style="@style/RelayButton" />
+
+            <Button
+                android:id="@+id/button7"
+                style="@style/RelayButton" />
+
+            <Button
+                android:id="@+id/button8"
+                style="@style/RelayButton" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button9"
+                style="@style/RelayButton" />
+
+            <Button
+                android:id="@+id/button10"
+                style="@style/RelayButton" />
+
+            <Button
+                android:id="@+id/button11"
+                style="@style/RelayButton" />
+
+            <Button
+                android:id="@+id/button12"
+                style="@style/RelayButton" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button13"
+                style="@style/RelayButton" />
+
+            <Button
+                android:id="@+id/button14"
+                style="@style/RelayButton" />
+
+            <Button
+                android:id="@+id/button15"
+                style="@style/RelayButton" />
+
+            <Button
+                android:id="@+id/button16"
+                style="@style/RelayButton" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button17"
+                style="@style/AllCallButton" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
