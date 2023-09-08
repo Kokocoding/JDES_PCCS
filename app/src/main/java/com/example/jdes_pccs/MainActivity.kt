@@ -16,13 +16,13 @@ import androidx.fragment.app.Fragment
 class MainActivity : AppCompatActivity() {
 
     private val buttonIds = arrayOf(R.id.btnVoice, R.id.btnMachine, R.id.btnMedia, R.id.btnRelay, R.id.btnPower)
-    private val AllCall = arrayOf(R.id.allCallOpen, R.id.allCallClose)
+    private val allCall = arrayOf(R.id.allCallOpen, R.id.allCallClose)
 
     private val progressBarMax = 100
     private val progressIncrement = 1
     private val handler = Handler(Looper.getMainLooper())
     private var currentProgress = 0
-    private var progressBol = false
+    private var isLoding = false
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         //連線
         SocketManager.connect("192.168.1.200", 6001)
 
-        var builder = AlertDialog.Builder(this)
+        val builder = AlertDialog.Builder(this)
 
         //title 按鈕事件
         for (buttonId in buttonIds) {
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //allCall按鈕區
-        for(buttonId in AllCall){
+        for(buttonId in allCall){
             val button = findViewById<Button>(buttonId)
 
             button.setOnTouchListener{ AllCallView, motionEvent ->
@@ -74,11 +74,11 @@ class MainActivity : AppCompatActivity() {
                         AllCallView.scaleY = 1f
 
                         if(buttonId == R.id.allCallOpen) {
-                            if(!progressBol) startLoading("open", builder)
+                            if(!isLoding) startLoading("open", builder)
                         }
 
                         if(buttonId == R.id.allCallClose){
-                            if(!progressBol) startLoading("close", builder)
+                            if(!isLoding) startLoading("close", builder)
                         }
                     }
                 }
@@ -95,8 +95,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startLoading(mode: String, builder: AlertDialog.Builder) {
-
-        progressBol = true
+        isLoding = true
 
         // 使用 Handler 每秒更新一次进度
         handler.postDelayed(object : Runnable {
@@ -119,7 +118,7 @@ class MainActivity : AppCompatActivity() {
 
                     handler.removeCallbacksAndMessages(null)
                     currentProgress = 0
-                    progressBol = false
+                    isLoding = false
 
                     // 創建dialog
                     if(mode == "open"){
