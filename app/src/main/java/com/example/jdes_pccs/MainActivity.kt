@@ -18,6 +18,12 @@ class MainActivity : AppCompatActivity() {
     private val buttonIds = arrayOf(R.id.btnVoice, R.id.btnMachine, R.id.btnMedia, R.id.btnRelay, R.id.btnPower)
     private val AllCall = arrayOf(R.id.allCallOpen, R.id.allCallClose)
 
+    private val progressBarMax = 100
+    private val progressIncrement = 1
+    private val handler = Handler(Looper.getMainLooper())
+    private var currentProgress = 0
+    private var progressBol = false
+
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,11 +74,11 @@ class MainActivity : AppCompatActivity() {
                         AllCallView.scaleY = 1f
 
                         if(buttonId == R.id.allCallOpen) {
-                            startLoading("open", builder)
+                            if(!progressBol) startLoading("open", builder)
                         }
 
                         if(buttonId == R.id.allCallClose){
-                            startLoading("close", builder)
+                            if(!progressBol) startLoading("close", builder)
                         }
                     }
                 }
@@ -88,12 +94,10 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
     }
 
-    private val progressBarMax = 100
-    private val progressIncrement = 2
-    private val handler = Handler(Looper.getMainLooper())
-    private var currentProgress = 0
-
     private fun startLoading(mode: String, builder: AlertDialog.Builder) {
+
+        progressBol = true
+
         // 使用 Handler 每秒更新一次进度
         handler.postDelayed(object : Runnable {
             override fun run() {
@@ -107,7 +111,7 @@ class MainActivity : AppCompatActivity() {
 
                     currentProgress += progressIncrement
                     progressBar.progress = currentProgress
-                    handler.postDelayed(this, 200) // 延遲0.2秒
+                    handler.postDelayed(this, 100) // 延遲0.2秒
                 } else {
                     // 载入完成后
                     fragmentLiner.visibility = View.VISIBLE
@@ -115,6 +119,7 @@ class MainActivity : AppCompatActivity() {
 
                     handler.removeCallbacksAndMessages(null)
                     currentProgress = 0
+                    progressBol = false
 
                     // 創建dialog
                     if(mode == "open"){
@@ -136,6 +141,6 @@ class MainActivity : AppCompatActivity() {
                     dialog.show()
                 }
             }
-        }, 200) // 延遲0.2秒
+        }, 100) // 延遲0.2秒
     }
 }
