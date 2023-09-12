@@ -150,9 +150,12 @@ class VoiceFragment : Fragment() {
         data[8] = index.toUByte()
 
         when(mode){
+            // +1 為 增益0.01 +10 為增益0.1  目前為 +50 為 0.5為單位
             "up" -> {
                 if (data[11].toInt() != 4 || (data[11].toInt() == 4 && data[10].toInt() < 176)) {
+                    //增益最大為12
                     if(data[10].toInt() + 50 > 255){
+                        //data[11] 從0開始忘上加
                         if(data[11].toInt() + 1 > 255){
                             data[11] = 0x00u
                         }else{
@@ -164,7 +167,9 @@ class VoiceFragment : Fragment() {
             }
             "down" -> {
                 if (data[11].toInt() != 227 || (data[11].toInt() == 227 && data[10].toInt() > 224)) {
+                    //減益最低-72
                     if(data[10].toInt() - 50 < 0){
+                        //data[11] 從FF開始往下扣
                         if(data[11].toInt() - 1 < 0){
                             data[11] = 0xFFu
                         }else{
@@ -240,12 +245,14 @@ class VoiceFragment : Fragment() {
         }
     }
 
+    //編碼
     @OptIn(ExperimentalUnsignedTypes::class)
     private fun byteArrayToBase64(byteArray: UByteArray): String {
         val byteArrayAsByteArray = byteArray.asByteArray() // 将 UByteArray 转换为 ByteArray
         return Base64.encodeToString(byteArrayAsByteArray, Base64.DEFAULT)
     }
 
+    //解碼
     @OptIn(ExperimentalUnsignedTypes::class)
     private fun base64ToByteArray(base64String: String): UByteArray {
         val byteArrayAsByteArray = Base64.decode(base64String, Base64.DEFAULT)
