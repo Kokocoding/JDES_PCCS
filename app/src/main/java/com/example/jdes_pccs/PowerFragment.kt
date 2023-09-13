@@ -75,7 +75,7 @@ class PowerFragment : Fragment() {
                 val byte3 = if(index == 16) 0x20.toUByte() else index.toUByte()
                 val byte4 = if(vm.RelaybtnBool[index]) 0x01.toUByte() else 0x02.toUByte()
                 val data = ubyteArrayOf(0xAAu, 0x00u, byte3, byte4, 0x55u)
-                val cmd = ubyteArrayOf(0xFAu, 0x00u, 0x00u, 0x04u, 0x00u, 0x03u, data.count().toUByte(), 0xFDu) + data
+                val cmd = ubyteArrayOf(0xFAu, 0x00u, 0x00u, 0x09u, 0x00u, 0x03u, data.count().toUByte(), 0xFDu) + data
                 SocketManager.sendCommand(cmd)
             }
         }
